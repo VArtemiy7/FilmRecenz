@@ -1,0 +1,24 @@
+.carousel{
+    position: relative; !important;
+    width: 50%; !important;
+    margin: auto; !important;
+}
+.about-container{
+    display: flex;
+    flex-direction: column;
+}
+.about-container h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.about-container span{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 1.2em;
+}
+.about-main-img{
+
+}
