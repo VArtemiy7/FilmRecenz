@@ -62,18 +62,19 @@
 
     {{-- Редактирование товара --}}
     <div class="container mt-5 mb-5">
-        <h2>Изменить последний добавленный фильм</h2>
-        <form method="post" action="{{route('redact')}}">
+        <h2>Редактировать фильм</h2>
+        <form method="get" action="{{ route('edit', 0) }}" onsubmit="this.action='{{ route('edit', '') }}/'+document.getElementById('editSelect').value">
             @csrf
             <div class="mb-3">
-                @if($tt)
-                    <input type="hidden" name="id" value="{{$tt->id}}">
-                    <input type="text" class="form-control" id="name" placeholder="Новое название" required name="name" value="{{$tt->name}}">
-                    <button type="submit" class="btn btn-primary mt-3">Обновить</button>
-                @else
-                    <p style="color: #e6b609;">Нет товаров для редактирования.</p>
-                @endif
+                <label for="editSelect" class="form-label">Выберите фильм для редактирования</label>
+                <select id="editSelect" class="form-select" required>
+                    <option selected disabled>Выберите фильм</option>
+                    @foreach($yy as $y)
+                        <option value="{{ $y->id }}">{{ $y->name }}</option>
+                    @endforeach
+                </select>
             </div>
+            <button type="submit" class="btn btn-primary">Редактировать</button>
         </form>
     </div>
 @endsection

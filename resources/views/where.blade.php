@@ -3,7 +3,7 @@
 @section('content')
     <figure class="text-center">
         <blockquote class="blockquote">
-            <h1>А где нас найти?</h1>
+            <h1>Как с нами связаться?</h1>
         </blockquote>
         <figcaption class="blockquote-footer">
             Можете найти нас <cite title="Source Title">На карте</cite>
@@ -16,7 +16,7 @@
     
     <figure class="text-center mt-4">
         <blockquote class="blockquote">
-            <h2>Также наши контакты</h2>
+            <h2>Наши контакты</h2>
         </blockquote>
     </figure>
     

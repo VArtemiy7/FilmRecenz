@@ -37,13 +37,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="{{'/catalog'}}">Каталог</a></li>
+                   <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="{{'/catalog'}}">Каталог фильмов</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{'/top'}}">Топ 5 фильмов</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{'/'}}">О нас</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{'/where'}}">Где нас найти?</a></li>
-                        @if(Auth::check() && Auth::user()->is_admin == 1)
-                        <li class="nav-item"><a class="nav-link" href="{{'/panel'}}">Панель управления</a></li>
-                        @endif
+                        <li class="nav-item"><a class="nav-link" href="{{'/where'}}">Как с нами связаться?</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,13 +49,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                                 </li>
                             @endif
                         @else
@@ -65,13 +63,18 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
+                                
                                 <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="{{ route('profile') }}">Профиль</a>
+                                    @if(Auth::check() && Auth::user()->is_admin == 1)
+                                    <a class="dropdown-item" href="{{ route('panel') }}">Панель управления</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Выйти из аккаунта') }}
                                     </a>
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

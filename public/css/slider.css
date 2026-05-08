@@ -263,16 +263,40 @@ a:hover {
 }
 
 .btn-secondary {
-    background: #f90223 !important;
-    padding: 9px;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-color) !important;
     color: var(--text-primary) !important;
+    padding: 10px 20px;
 }
 
 .btn-secondary:hover {
     border-color: var(--accent) !important;
+    background: var(--bg-card-hover) !important;
 }
 
+.btn-save {
+    background: #28a745 !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 10px 24px;
+}
+
+.btn-save:hover {
+    background: #218838 !important;
+}
+
+.btn-cancel {
+    background: var(--accent) !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 10px 24px;
+}
+
+.btn-cancel:hover {
+    background: var(--accent-hover) !important;
+}
 
 .table {
     color: var(--text-primary) !important;
@@ -569,4 +593,45 @@ a:hover {
     box-shadow: var(--shadow-lg);
     max-width: 100%;
     width: 100%;
+}
+
+.comments-section {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.comment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.comment-card strong {
+    color: var(--text-primary);
+}
+
+.comment-card small {
+    color: var(--text-muted);
+    margin-left: 10px;
+}
+
+.comment-card p {
+    color: var(--text-secondary);
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+.top-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--accent-gold);
+    color: #000;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 5;
 }

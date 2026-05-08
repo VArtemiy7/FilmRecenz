@@ -14,7 +14,6 @@
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"></button>
         </div>
         
-        <h2 class="text-center" style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 20px;">Топ-4 фильма</h2>
         
         <div class="carousel-inner">
             @foreach($sliderproducts as $product)
